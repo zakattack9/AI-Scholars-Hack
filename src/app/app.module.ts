@@ -7,6 +7,7 @@ import { HeaderComponent } from './Components/Header/header.component';
 import { StatsComponent } from './Pages/Stats/stats.component';
 import { GradesComponent } from './Pages/Grades/grades.component';
 import { SidebarComponent } from './Components/Sidebar/sidebar.component';
+import { LoginComponent } from './Pages/Login/login.component';
 
 @NgModule({
   declarations: [
@@ -15,14 +16,16 @@ import { SidebarComponent } from './Components/Sidebar/sidebar.component';
     HeaderComponent,
     StatsComponent,
     GradesComponent,
-    SidebarComponent
+    SidebarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'stats', component: StatsComponent },
-      { path: 'grades', component: GradesComponent }
+      { path: 'grades', component: GradesComponent },
+      { path: 'login', component: LoginComponent }
     ])
   ],
   providers: [],
