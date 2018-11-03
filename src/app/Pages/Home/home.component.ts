@@ -19,14 +19,6 @@ export class HomeComponent implements OnInit {
     let chart = new CanvasJS.Chart('chartContainer', {
       zoomEnabled: true,
       animationEnabled: true,
-      title: {
-        text: 'Weekly Graph'
-      },
-      subtitles: [
-        {
-          text: ''
-        }
-      ],
       data: [
         {
           type: 'line',
