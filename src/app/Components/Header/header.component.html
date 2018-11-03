@@ -1,1 +1,13 @@
-<div class="header-container">Pace</div>
+<div class="header-container">
+  <div class="header">
+    <i class="fas fa-bars" id='overlay' (click)="toggleSideBar()"></i>
+    <div class="title">Pace</div>
+    <i class="fas fa-info-circle"></i>
+  </div>
+
+  <div class="nav">
+    <div class="home" routerLink='/'>Home</div>
+    <div class="stats" routerLink='/stats'>Stats</div>
+    <div class="grades" routerLink='/grades'>Grades</div>
+  </div>
+</div>
