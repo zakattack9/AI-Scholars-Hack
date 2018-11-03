@@ -1,0 +1,19 @@
+.header-container {
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .fas {
+    transform: scale(2, 2);
+  }
+  .title {
+    font-size: 250%;
+  }
+  .fa-bars {
+    padding-left: 5%;
+  }
+  .fa-info-circle {
+    padding-right: 5%;
+  }
+}
