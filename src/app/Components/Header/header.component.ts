@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   constructor() {}
+  toggleSideBar() {
+    document.getElementById('sidebar').classList.toggle('active');
+  }
 }

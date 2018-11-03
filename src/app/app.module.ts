@@ -6,6 +6,7 @@ import { HomeComponent } from './Pages/Home/home.component';
 import { HeaderComponent } from './Components/Header/header.component';
 import { StatsComponent } from './Pages/Stats/stats.component';
 import { GradesComponent } from './Pages/Grades/grades.component';
+import { SidebarComponent } from './Components/Sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { GradesComponent } from './Pages/Grades/grades.component';
     HomeComponent,
     HeaderComponent,
     StatsComponent,
-    GradesComponent
+    GradesComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
