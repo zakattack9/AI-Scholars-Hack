@@ -8,6 +8,7 @@ import { StatsComponent } from './Pages/Stats/stats.component';
 import { GradesComponent } from './Pages/Grades/grades.component';
 import { SidebarComponent } from './Components/Sidebar/sidebar.component';
 import { LoginComponent } from './Pages/Login/login.component';
+import { RegisterComponent } from './Pages/Register/register.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { LoginComponent } from './Pages/Login/login.component';
     StatsComponent,
     GradesComponent,
     SidebarComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { LoginComponent } from './Pages/Login/login.component';
       { path: '', component: HomeComponent },
       { path: 'stats', component: StatsComponent },
       { path: 'grades', component: GradesComponent },
-      { path: 'login', component: LoginComponent }
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent }
     ])
   ],
   providers: [],
