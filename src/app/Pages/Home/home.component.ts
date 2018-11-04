@@ -9,12 +9,21 @@ import { BackendService } from 'src/Services/backend.service';
 })
 export class HomeComponent implements OnInit {
   constructor(private backend: BackendService) {}
-
+  study;
+  break;
+  cycles;
+  looked_away;
+  total;
   subjects = ['Math', 'English', 'Physics'];
   techniques = ['Pomodoro', '20/20/20'];
   ngOnInit() {
     return this.backend.getStats().then(result => {
-      console.log(result);
+      let rArr = Array.from(result)[Array.from(result).length - 1];
+      this.study = rArr.studying;
+      this.break = rArr.break;
+      this.cycles = rArr.cycles;
+      this.looked_away = rArr.looked_away;
+      this.total = rArr.break + rArr.studying;
       let dataPoints = [
         { label: 'MON', y: 10, color: '#13b1d0' },
         { label: 'TUE', y: 15, color: '#13b1d0' },
@@ -24,7 +33,7 @@ export class HomeComponent implements OnInit {
         { label: 'SAT', y: 28, color: '#13b1d0' },
         {
           label: 'SUN',
-          y: result[Array.from(result).length - 1].studying,
+          y: this.study,
           color: '#13b1d0'
         }
       ];

@@ -16,13 +16,13 @@
         </div>
         <div class="time-container">
           <div class="time" *ngIf='technique === "20/20/20"'>
-            <div class="detail-one">Cycles: 8</div>
-            <div class="detail-two">Looked Away: 160 sec</div>
+            <div class="detail-one">Cycles: {{cycles}}</div>
+            <div class="detail-two">Looked Away: {{cycles * looked_away}}</div>
           </div>
           <div class="time" *ngIf='technique === "Pomodoro"'>
-            <div class="detail-one">Studying: <br/> 90 m</div>
-            <div class="detail-two">Break: <br/> 30 m</div>
-            <div class="detail-three">Total: <br/> 120 m</div>
+            <div class="detail-one">Studying: <br /> {{study}}</div>
+            <div class="detail-two">Break: <br /> {{break}}</div>
+            <div class="detail-three">Total: <br /> {{total}}</div>
           </div>
         </div>
       </div>
