@@ -2,12 +2,37 @@
   <div class="header">
     <i class="fas fa-bars" id='overlay' (click)="toggleSideBar()"></i>
     <div class="title">Pace</div>
-    <i class="fas fa-info-circle"></i>
+    <i class="fas fa-info-circle" (click)='toggleShowInfo()'></i>
   </div>
 
   <div class="nav">
     <div class="home" routerLink='/stats'>Home</div>
     <div class="stats" routerLink='/'>Stats</div>
     <div class="grades" routerLink='/grades'>Grades</div>
+  </div>
+</div>
+
+.<div id="modal" *ngIf="showInfo">
+  <div id="modal-content">
+    <div class="button-container">
+      <div (click)="toggleShowInfo()">❌</div>
+    </div>
+    <div class="stats-container">
+      <div class="header2">Purpose</div>
+      <div class="info2">This app utilizes Amazon's Echo Dot as a voice-activated timer that incorporates the
+        previously
+        stated techniques to assist in task-production.</div>
+      <div class="header2">The Pomodoro Technique</div>
+      <div class="info2">The pomodoro technique revolves around working in 25 minute intervals with breaks in-between.
+        This
+        allows for a better flow and focus on your tasks.</div>
+
+      <div class="header2">The 20-20-20 Rule</div>
+      <div class="info2">The 20-20-20 rule is technique for people working on digital devices. In order to preserve and
+        promote healthy eye functionality in later years of life, one should take a break every 20 minutes, and stare
+        at
+        something 20 feet away for 20 seconds.</div>
+
+    </div>
   </div>
 </div>
