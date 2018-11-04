@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./grades.component.scss']
 })
 export class GradesComponent {
+  courses = ['Math', 'English', 'History', 'Science'];
+  grades = ['B-', 'A+', 'C', 'A'];
   constructor() {}
 }

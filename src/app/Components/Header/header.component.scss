@@ -32,7 +32,12 @@
     .home,
     .grades,
     .stats {
-      font-size: 130%;
+      font-size: 135%;
+    }
+    .home:hover,
+    .stats:hover,
+    .grades:hover {
+      border-bottom: 2px blue solid;
     }
   }
 }

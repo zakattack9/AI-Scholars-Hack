@@ -1,0 +1,21 @@
+.stats-container {
+  display: flex;
+  height: 85vh;
+  padding-top: 5vh;
+  flex-direction: column;
+  align-items: center;
+  .logo {
+    background-image: url('../../../assets/logo.png');
+    background-size: 100% 100%;
+    height: 45vh;
+    width: 45vh;
+  }
+  .header {
+    font-size: 200%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2vh;
+  }
+}
