@@ -1,11 +1,12 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { BackendService } from 'src/Services/backend.service';
 
 @Component({
   selector: 'app-grades',
   templateUrl: './grades.component.html',
   styleUrls: ['./grades.component.scss']
 })
-export class GradesComponent {
+export class GradesComponent implements OnInit {
   @HostListener('document:click', ['$event'])
   clickout(event) {
     let checks = Array.from(document.getElementsByClassName('far'));
@@ -13,7 +14,16 @@ export class GradesComponent {
       event.target.classList.toggle('active');
     }
   }
-  courses = ['Math', 'English', 'History', 'Science'];
-  grades = ['B-', 'A+', 'C', 'A'];
-  constructor() {}
+  courses = [];
+  grades = [];
+  constructor(private backend: BackendService) {}
+
+  ngOnInit() {
+    return this.backend.getClasses().then(result => {
+      for (let i = 0; i < result.length; i++) {
+        this.courses.push(result[i].class);
+        this.grades.push(result[i].grade);
+      }
+    });
+  }
 }
