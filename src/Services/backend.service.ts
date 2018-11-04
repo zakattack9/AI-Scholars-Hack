@@ -12,4 +12,9 @@ export class BackendService {
     const getUrl = this.url + 'classes';
     return this.http.get(getUrl).toPromise();
   }
+
+  getStats() {
+    const getUrl = this.url + 'stats';
+    return this.http.get(getUrl).toPromise();
+  }
 }
