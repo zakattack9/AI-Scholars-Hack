@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
         { label: 'WED', y: 25, color: '#13b1d0' },
         { label: 'THU', y: 30, color: '#13b1d0' },
         { label: 'FRI', y: 28, color: '#13b1d0' },
-        { label: 'SAT', y: 28, color: '#13b1d0' },
+        { label: 'SAT', y: 10, color: '#13b1d0' },
         {
           label: 'SUN',
           y: this.study,

@@ -95,6 +95,7 @@
         justify-content: space-evenly;
         height: 30vh;
         width: 100%;
+        font-size: 110%;
         .task {
           border-bottom: 1px solid black;
           width: 100%;
@@ -107,6 +108,7 @@
             text-overflow: ellipsis;
             margin-left: 6%;
             padding-bottom: 7px;
+            font-weight: 300;
           }
           .far {
             transform: scale(1.5, 1.5) translateY(4px);

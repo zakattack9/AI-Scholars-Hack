@@ -55,6 +55,16 @@ app.post('/fastTimer', (req, res) => {
     req.body.fastTime === 'nah' ||
     req.body.fastTime === 'naw';
   if (fastTimeYes) {
+    let params = {
+      FunctionName: 'pace-study-tool-dev-breakNotif' /* required */
+    };
+  
+    lambda.invoke(params, function(err, data) {
+      if (err) console.log(err, err.stack);
+      // an error occurred
+      else console.log(data); // successful response
+    });
+
     return new Stats({
       break: 5,
       studying: 20,
@@ -62,28 +72,18 @@ app.post('/fastTimer', (req, res) => {
       looked_away: 20
     })
       .save()
-      .then(newStats => {
-        res.json(newStats);
-      })
       .then(() => {
         res.json({
           message: 'Fast forwarding studying timer for demo purposes'
         });
       })
+      .then(newStats => {
+        res.json(newStats);
+      })
       .catch(err => console.log(err));
   } else if (fastTimeNo) {
     res.json({ message: 'Timer not fast forwarded, continue studying' });
   }
-
-  // let params = {
-  //   FunctionName: 'pace-study-tool-dev-start' /* required */
-  // };
-
-  // lambda.invoke(params, function(err, data) {
-  //   if (err) console.log(err, err.stack);
-  //   // an error occurred
-  //   else console.log(data); // successful response
-  // });
 });
 
 app.post('/study', (req, res) => {
@@ -143,7 +143,7 @@ app.post('/fastBreak', (req, res) => {
   }
 
   let params = {
-    FunctionName: 'pace-study-tool-dev-studyoNotif' /* required */
+    FunctionName: 'pace-study-tool-dev-studyNotif' /* required */
   };
 
   lambda.invoke(params, function(err, data) {

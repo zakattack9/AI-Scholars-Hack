@@ -28,8 +28,9 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Commands
 
-knex migrate:rollback
-knex migrate:latest
+knex migrate:rollback (rollback twice)
+knex migrate:latest (migrate once)
+knex seed:run (run once after migrate)
 
 ng serve (start anuglar server)
 nodemon server.js

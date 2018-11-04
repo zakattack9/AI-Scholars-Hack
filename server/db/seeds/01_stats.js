@@ -5,7 +5,7 @@ exports.seed = function(knex, Promise) {
     .then(function() {
       // Inserts seed entries
       return knex('stats').insert([
-        { id: 1, break: 0, studying: 0, cycles: 0, looked_away: 0 }
+        { break: 0, studying: 0, cycles: 0, looked_away: 0 }
       ]);
     });
 };
