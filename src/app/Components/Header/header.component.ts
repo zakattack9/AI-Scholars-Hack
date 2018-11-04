@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   constructor() {}
+  showInfo = false;
+  toggleShowInfo() {
+    this.showInfo = !this.showInfo;
+  }
   toggleSideBar() {
     document.getElementById('sidebar').classList.toggle('active');
   }

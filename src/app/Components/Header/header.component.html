@@ -2,12 +2,21 @@
   <div class="header">
     <i class="fas fa-bars" id='overlay' (click)="toggleSideBar()"></i>
     <div class="title">Pace</div>
-    <i class="fas fa-info-circle"></i>
+    <i class="fas fa-info-circle" (click)='toggleShowInfo()'></i>
   </div>
 
   <div class="nav">
     <div class="home" routerLink='/stats'>Home</div>
     <div class="stats" routerLink='/'>Stats</div>
     <div class="grades" routerLink='/grades'>Grades</div>
+  </div>
+</div>
+
+.<div id="modal" *ngIf="showInfo">
+  <div id="modal-content">
+    <button (click)="toggleShowInfo()">❌</button>
+    <div>Modal Content</div>
+    <div class="button-container">
+    </div>
   </div>
 </div>
