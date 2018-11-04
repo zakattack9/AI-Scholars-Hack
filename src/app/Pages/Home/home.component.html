@@ -1,0 +1,28 @@
+<div class="home-container">
+  <div id="chartContainer"></div>
+  <div class="drop">Last 7 Days</div>
+  <div class="subjects">Subjects Studied:</div>
+  <div class="subjects-container">
+    <div class="subject" *ngFor='let subject of subjects'>
+      {{subject}}
+    </div>
+  </div>
+  <div class="technique-container">
+    <div class="technique" *ngFor='let technique of techniques'>
+      <div class="t-header">
+        {{technique}} Technique:
+      </div>
+      <div class="time-container">
+        <div class="time" *ngIf='technique === "20/20/20"'>
+          <div class="detail-one">Cycles: 8</div>
+          <div class="detail-two">Looked Away: 160 sec</div>
+        </div>
+        <div class="time" *ngIf='technique === "Pomodoro"'>
+          <div class="detail-one">Studying: 90 m</div>
+          <div class="detail-two">Break: 30 m</div>
+          <div class="detail-three">Total: 120 m</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
