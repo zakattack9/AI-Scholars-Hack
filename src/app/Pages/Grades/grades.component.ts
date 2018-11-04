@@ -20,9 +20,9 @@ export class GradesComponent implements OnInit {
 
   ngOnInit() {
     return this.backend.getClasses().then(result => {
-      for (let i = 0; i < result.length; i++) {
-        this.courses.push(result[i].class);
-        this.grades.push(result[i].grade);
+      for (let i = 0; i < Array.from(result).length; i++) {
+        this.courses.push(result[i].class[0].toUpperCase() + result[i].class.slice(1));
+        this.grades.push(result[i].grade.toUpperCase());
       }
     });
   }

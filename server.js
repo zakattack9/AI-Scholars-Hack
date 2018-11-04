@@ -23,6 +23,24 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //   }, 3000);
 //   console.log("hello world");
 // });
+app.post('/addGrade', (req, res) => {
+  let subject = req.body.subject;
+  let grade = req.body.grade;
+  return new Class({
+    class: subject,
+    grade: grade
+  })
+    .save()
+    .then(() => {
+      res.json({
+        "message": `Added ${req.body.subject} with grade ${req.body.grade}`
+      });
+    })
+    .then(newClass => {
+      res.json(newClass);
+    })
+    .catch(err => console.log(err));
+});
 
 app.post('/study', (req, res) => {
   console.log('req', req.body);
@@ -150,27 +168,6 @@ app.post('/grade', (req, res) => {
 
   response.message = msg;
   res.json(response);
-});
-
-
-
-app.post('/addGrade', (req, res) => {
-  let subject = req.body.subject;
-  let grade = req.body.grade;
-  return new Class({
-    class: subject,
-    grade: grade
-  })
-    .save()
-    .then(newClass => {
-      res.json(newClass);
-    })
-    .then(() => {
-      res.json({
-        message: `Added ${req.body.subject} with grade ${req.body.grade}`
-      });
-    })
-    .catch(err => console.log(err));
 });
 
 // VIEW PROGRESS INTENTS
