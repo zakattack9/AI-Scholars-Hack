@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -6,8 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  constructor() {}
   showInfo = false;
+  @HostListener('document:click', ['$event'])
+  clickout(event) {
+    document.getElementById('modal-content');
+    document.getElementById('modal');
+    if (event.target === document.getElementById('modal')) {
+      this.showInfo = !this.showInfo;
+    }
+  }
+  constructor() {}
+
   toggleShowInfo() {
     this.showInfo = !this.showInfo;
   }
