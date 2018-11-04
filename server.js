@@ -5,6 +5,7 @@ const AWS = require('aws-sdk');
 const app = express();
 const PORT = process.env.PORT || 8080;
 const Class = require('./server/db/models/Class');
+const Stats = require('./server/db/models/Stats');
 AWS.config.update({
   accessKeyId: process.env.ACCESS_KEY_ID,
   secretAccessKey: process.env.SECRET_ACCESS_KEY,
@@ -33,13 +34,56 @@ app.post('/addGrade', (req, res) => {
     .save()
     .then(() => {
       res.json({
-        "message": `Added ${req.body.subject} with grade ${req.body.grade}`
+        message: `Added ${req.body.subject} with grade ${req.body.grade}`
       });
     })
     .then(newClass => {
       res.json(newClass);
     })
     .catch(err => console.log(err));
+});
+
+app.post('/fastTimer', (req, res) => {
+  let fastTimeYes =
+    req.body.fastTime === 'yes' ||
+    req.body.fastTime === 'yeah' ||
+    req.body.fastTime === 'yup' ||
+    req.body.fastTime === 'sure';
+  let fastTimeNo =
+    req.body.fastTime === 'no' ||
+    req.body.fastTime === 'nope' ||
+    req.body.fastTime === 'nah' ||
+    req.body.fastTime === 'naw';
+  if (fastTimeYes) {
+    return new Stats({
+      break: 5,
+      studying: 20,
+      cycles: 1,
+      looked_away: 20
+    })
+      .save()
+      .then(newStats => {
+        res.json(newStats);
+      })
+      .then(() => {
+        res.json({
+          message: 'Fast forwarding studying timer for demo purposes'
+        });
+      })
+      .catch(err => console.log(err));
+  } else if (fastTimeNo) {
+    res.json({ message: 'Timer not fast forwarded, continue studying' });
+  }
+
+  // let params = {
+  //   FunctionName: 'pace-study-tool-dev-start' /* required */
+  // };
+
+  // lambda.invoke(params, function(err, data) {
+  //   if (err) console.log(err, err.stack);
+  //   // an error occurred
+  //   else console.log(data); // successful response
+  // });
 });
 
 app.post('/study', (req, res) => {
@@ -68,35 +112,6 @@ app.post('/study', (req, res) => {
   } else {
     res.json({ message: "I didn't catch that please try again" });
   }
-});
-
-app.post('/fastTimer', (req, res) => {
-  let fastTimeYes =
-    req.body.fastTime === 'yes' ||
-    req.body.fastTime === 'yeah' ||
-    req.body.fastTime === 'yup' ||
-    req.body.fastTime === 'sure';
-  let fastTimeNo =
-    req.body.fastTime === 'no' ||
-    req.body.fastTime === 'nope' ||
-    req.body.fastTime === 'nah' ||
-    req.body.fastTime === 'naw';
-
-  if (fastTimeYes) {
-    res.json({ message: 'Fast forwarding studying timer for demo purposes' });
-  } else if (fastTimeNo) {
-    res.json({ message: 'Timer not fast forwarded, continue studying' });
-  }
-
-  let params = {
-    FunctionName: 'pace-study-tool-dev-breakNotif' /* required */
-  };
-
-  lambda.invoke(params, function(err, data) {
-    if (err) console.log(err, err.stack);
-    // an error occurred
-    else console.log(data); // successful response
-  });
 });
 
 app.get('/startBreak', (req, res) => {
@@ -205,6 +220,12 @@ app.post('/progress', (req, res) => {
 app.get('/api/classes', (req, res) => {
   return Class.fetchAll().then(classes => {
     return res.json(classes);
+  });
+});
+
+app.get('/api/stats', (req, res) => {
+  return Stats.fetchAll().then(result => {
+    return res.json(result);
   });
 });
 
