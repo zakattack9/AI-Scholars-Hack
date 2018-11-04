@@ -97,6 +97,10 @@ app.post('/grade', (req, res) => {
   res.json(response);
 });
 
+app.post('/addGrade', (req, res) => {
+  res.json({"message":`Added ${req.body.subject} with grade ${req.body.grade}`});
+});
+
 // VIEW PROGRESS INTENTS
 app.post('/progress', (req, res) => {
   //let seeToday = req.body.dayOrWeek === "today" || req.body.dayOrWeek === "just today" || req.body.dayOrWeek === "progress for today" || req.body.dayOrWeek === "today's progress";
