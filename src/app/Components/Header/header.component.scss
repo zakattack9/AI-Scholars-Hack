@@ -15,6 +15,8 @@
     }
     .title {
       font-size: 250%;
+      font-family: 'Kalam', cursive;
+      color: #13b1d0;
     }
     .fa-bars {
       padding-left: 5%;
@@ -32,7 +34,12 @@
     .home,
     .grades,
     .stats {
-      font-size: 130%;
+      font-size: 135%;
+    }
+    .home:hover,
+    .stats:hover,
+    .grades:hover {
+      border-bottom: 2px blue solid;
     }
   }
 }
