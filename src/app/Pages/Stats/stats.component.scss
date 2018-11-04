@@ -1,0 +1,46 @@
+.stats-container {
+  display: flex;
+  height: 85vh;
+  padding-top: 3vh;
+  flex-direction: column;
+  align-items: center;
+  // .logo {
+  //   background-image: url('../../../assets/logo.png');
+  //   background-size: 100% 100%;
+  //   height: 45vh;
+  //   width: 45vh;
+  // }
+  .background {
+    background-image: url('../../../assets/alexaSkillIcn.png');
+    background-size: 100% 100%;
+    height: 45vh;
+    width: 53vh;
+    position: absolute;
+    top: 30%;
+    opacity: 0.1;
+  }
+  .header {
+    // font-family: 'Kalam', cursive;
+    color: #13b1d0;
+    font-size: 315%;
+    width: 85%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    // align-items: center;
+    padding-bottom: 2vh;
+    // text-align: center;
+    text-align: right;
+    // background-color: #13b1d089;
+    padding: 10px 0px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+  }
+  .info {
+    font-size: 300%;
+    width: 80%;
+    font-weight: 200;
+    color: rgb(27, 27, 27);
+    margin-top: 15px;
+  }
+}

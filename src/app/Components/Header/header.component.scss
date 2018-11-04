@@ -1,0 +1,114 @@
+.header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 15vh;
+  width: 100%;
+  .header {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .fas {
+      transform: scale(1.4, 1.4);
+      margin-bottom: 8px;
+    }
+    .title {
+      font-size: 250%;
+      font-family: 'Kalam', cursive;
+      color: #13b1d0;
+    }
+    .fa-bars {
+      padding-left: 5%;
+    }
+    .fa-info-circle {
+      padding-right: 5%;
+    }
+  }
+  .nav {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 5vh;
+    outline: none;
+    color: rgb(51, 51, 51);
+    .home,
+    .grades,
+    .stats {
+      font-size: 130%;
+      width: 100%;
+      padding-bottom: 8px;
+      text-align: center;
+    }
+    .home:hover,
+    .stats:hover,
+    .grades:hover {
+      border-bottom: 2px #13b1d0 solid;
+      font-weight: 600;
+      color: rgb(34, 34, 34);
+    }
+    .home:focus,
+    .stats:focus,
+    .grades:focus {
+      outline: none;
+    }
+  }
+}
+
+#modal {
+  width: 100%;
+  height: 85vh;
+  margin-top: 15vh;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  position: fixed;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 5%;
+}
+
+#modal-content {
+  background: white;
+  margin: 0 auto;
+  border-radius: 5px;
+  width: 100%;
+  height: 93vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.stats-container {
+  display: flex;
+  height: 85vh;
+  padding-top: 2vh;
+  flex-direction: column;
+  align-items: center;
+  .header2 {
+    font-size: 115%;
+    width: 85%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2vh;
+    text-align: center;
+    background-color: #13b1d089;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  .info2 {
+    font-size: 100%;
+    width: 80%;
+  }
+}

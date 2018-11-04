@@ -1,0 +1,119 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 85vh;
+  width: 100%;
+  padding-top: 3.5vh;
+  .graph-title {
+    width: 100%;
+    padding-left: 5%;
+    padding-bottom: 2%;
+    font-size: 110%;
+    color: #4e4e4e;
+  }
+  #chartContainer {
+    height: 40vh;
+    width: 95%;
+  }
+  .stats-container {
+    height: 45vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5%;
+    .drop {
+      width: 100%;
+      padding-left: 4.5%;
+      padding-bottom: 2%;
+      font-size: 110%;
+      color: #4e4e4e;
+    }
+    .subjects {
+      width: 100%;
+      padding-left: 10%;
+      padding-top: 1%;
+      font-size: 100%;
+      font-weight: 300;
+    }
+    .subjects-container {
+      display: flex;
+      width: 100%;
+      justify-content: start;
+      align-items: center;
+      height: 5vh;
+      padding-left: 10%;
+      padding-top: 5%;
+      font-size: 90%;
+      .subject {
+        background-color: #efefef;
+        height: 5vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 25vw;
+        border-radius: 5%;
+        margin-right: 2%;
+      }
+    }
+
+    .technique-container {
+      width: 100%;
+      .technique {
+        display: flex;
+        flex-direction: column;
+        padding-left: 10%;
+        padding-top: 12%;
+        justify-content: space-evenly;
+        height: 10vh;
+        font-size: 95%;
+        .t-header {
+          font-size: 100%;
+          font-weight: 300;
+        }
+        .time-container {
+          .time {
+            width: 87%;
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 2%;
+            text-align: center;
+            .detail-one {
+              background-color: #13b1d0be;
+              height: 40px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-grow: 2;
+              color: white;
+            }
+            .detail-two {
+              background-color: #13b1d089;
+              height: 40px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 5px;
+              color: white;
+              flex-grow: 1;
+            }
+            .detail-three {
+              background-color: #bbdeadff;
+              height: 40px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              padding: 5px;
+              color: #666666;
+              flex-grow: 1;
+              color: white;
+              margin-bottom: 4%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
