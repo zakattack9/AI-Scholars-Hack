@@ -73,7 +73,7 @@
         font-size: 130%;
         height: 3vh;
         padding: 8% 10%;
-        background-color: #13b1d089;
+        background-color: #13b1d0be;
         border-radius: 2%;
         display: flex;
         justify-content: center;
@@ -106,9 +106,10 @@
             white-space: nowrap;
             text-overflow: ellipsis;
             margin-left: 6%;
+            padding-bottom: 7px;
           }
           .far {
-            transform: scale(1.5, 1.5);
+            transform: scale(1.5, 1.5) translateY(4px);
             height: 10px;
             width: 10px;
             display: flex;
