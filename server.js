@@ -141,6 +141,16 @@ app.post('/fastBreak', (req, res) => {
   } else if (fastTimeNo) {
     res.json({ message: 'Timer not fast forwarded, you are still on break' });
   }
+
+  let params = {
+    FunctionName: 'pace-study-tool-dev-studyoNotif' /* required */
+  };
+
+  lambda.invoke(params, function(err, data) {
+    if (err) console.log(err, err.stack);
+    // an error occurred
+    else console.log(data); // successful response
+  });
 });
 
 // GRADE INTENTS

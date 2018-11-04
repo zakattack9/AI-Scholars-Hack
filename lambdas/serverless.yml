@@ -57,8 +57,19 @@ provider:
 functions:
   # send:
   #   handler: sns.send
-  start:
-    handler: startTimer.startTimer
+  breakNotif:
+    handler: breakNotif.startTimer
+    events:
+      - http:
+          path: start
+          method: post
+          cors: true
+    request:
+      passThrough: WHEN_NO_TEMPLATES
+      template:
+        application/x-www-form-urlencoded: '{ "body" : "$input.body" }'
+  studyNotif:
+    handler: studyNotif.startTimer
     events:
       - http:
           path: start
