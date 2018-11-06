@@ -134,9 +134,14 @@ app.post('/fastBreak', (req, res) => {
     req.body.fastTime === 'naw';
 
   if (fastTimeYes) {
+    // res.json({
+    //   message:
+    //     'Break is up. Time to begin studying for another twenty minutes starting now.'
+    // });
+
     res.json({
       message:
-        'Break is up. Time to begin studying for another twenty minutes starting now.'
+        'Fast forwarding studying timer for demo purposes.'
     });
   } else if (fastTimeNo) {
     res.json({ message: 'Timer not fast forwarded, you are still on break' });
@@ -168,26 +173,31 @@ app.post('/grade', (req, res) => {
     req.body.recommend === 'yeah' ||
     req.body.recommend === 'yup' ||
     req.body.recommend === 'sure';
-  let howLong =
-    req.body.howLong === 'yes' ||
-    req.body.howLong === 'yeah' ||
-    req.body.howLong === 'yup' ||
-    req.body.howLong === 'sure';
+  //let howLong =
+    // req.body.howLong === 'yes' ||
+    // req.body.howLong === 'yeah' ||
+    // req.body.howLong === 'yup' ||
+    // req.body.howLong === 'sure';
 
-  console.log(allGrades, recommend, howLong);
+  //console.log(allGrades, recommend, howLong);
 
   if (allGrades) {
     msg +=
-      'Your grades are A for Physics, B for Math, C for Computer Science. ';
+      'Your grade is a C for Physics, A for English, and D for Math.';
   }
+  // if (recommend) {
+  //   msg +=
+  //     'Math and Physics are the classes you should study for the most. ';
+  // }
+  //if (howLong) {
+  //   msg +=
+  //     'According to my calculations, it is reccomended that you study English for 10 minutes, Math for 45 minutes, and Physics for 30 minutes. ';
+  // } 
   if (recommend) {
     msg +=
-      'Math and Computer Science are the classes you should study for the most. ';
+      'The classes you should study for the most are Math and Physics. According to my calculations, it is reccomended that you study English for 10 minutes, Math for 45 minutes, and Physics for 30 minutes. ';
   }
-  if (howLong) {
-    msg +=
-      'According to my calculations, it is reccomended that you study Physics for 10 minutes, Math for 30 minutes, and Computer Science for 45 minutes. ';
-  } else {
+  else {
     msg += 'No option selected, please try again';
   }
 

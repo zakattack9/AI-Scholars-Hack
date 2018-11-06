@@ -4,9 +4,8 @@ exports.seed = function(knex, Promise) {
     .then(function () {
       // Inserts seed entries
       return knex('class').insert([
-        {class: 'Math', grade: 'A'},
         {class: 'English', grade: 'A'},
-        {class: 'Science', grade: 'A'},
+        {class: 'Physics', grade: 'C'},
       ]);
     });
 };
